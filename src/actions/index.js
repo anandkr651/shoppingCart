@@ -23,18 +23,20 @@ export async function fetchAllProduct() {
 }
 
 //ProductDetailsPage
-export async function fetchProductDetails(cuttentId) {
+export async function fetchProductDetails(currentId) {
   try {
     const apiResponse = await fetch(
-      `https://dummyjson.com/products/${cuttentId}`,
+      `https://dummyjson.com/products/${currentId}`,
       {
         method: "GET",
         cache: "no-store",
       }
     );
     const data = await apiResponse.json();
-
-    return data;
+    return {
+      success: true,
+      data: data,
+    };
   } catch (error) {
     return {
       success: false,

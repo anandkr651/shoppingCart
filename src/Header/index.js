@@ -7,10 +7,12 @@ import React from "react";
 function Header({ getSession }) {
   // console.log(getSession,"getSession in header");
 
-  async function handleAuthSignIn() {
+  async function handleAuthSignIn(e) {
+    e.preventDefault();
     await loginAction();
   }
-  async function handleAuthSignOut() {
+  async function handleAuthSignOut(e) {
+    e.preventDefault();
     await logoutAction();
   }
 
@@ -28,7 +30,7 @@ function Header({ getSession }) {
         </li>
       </ul>
       <div className="flex space-x-3 justify-center items-center ml-6">
-        <form action={getSession?.user ? handleAuthSignOut : handleAuthSignIn}>
+        <form onSubmit={getSession?.user ? handleAuthSignOut : handleAuthSignIn}>
           <Button type="submit">{getSession?.user ? "Logout" : "Login"}</Button>
         </form>
       </div>
