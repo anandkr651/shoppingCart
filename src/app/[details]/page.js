@@ -1,6 +1,7 @@
 import { fetchProductDetails } from "@/actions";
 import { auth } from "@/auth";
 import AddToCart from "@/components/addToCart";
+import { redirect } from "next/navigation";
 import React from "react";
 
 async function ProductDetailsPage({ params }) {
