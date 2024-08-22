@@ -21,17 +21,19 @@ function Cart() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setTotalAmount(cart?.cartItem.reduce((acc, curr) => acc + curr?.price, 0));
+    if (cart?.cartItem) {
+      setTotalAmount(cart.cartItem.reduce((acc, curr) => acc + curr?.price, 0));
+    }
   }, [cart?.cartItem]);
 
   function handleClick(productId) {
     dispatch(removeFromCart(productId));
   }
 
-  if (!cart.cartItem.length)
+  if (!cart?.cartItem?.length)
     return (
       <h1 className="text-3xl font-extrabold text-center text-slate-600 ">
-        cart is empty
+        Cart is empty
       </h1>
     );
 
@@ -51,10 +53,16 @@ function Cart() {
         <TableBody>
           {cart.cartItem.map((buyItem) => (
             <TableRow key={buyItem.id}>
-              <TableCell className="font-medium">{buyItem.title}</TableCell>
-              <TableCell>{buyItem.returnPolicy}</TableCell>
-              <TableCell>{buyItem.brand}</TableCell>
-              <TableCell>{buyItem.price}</TableCell>
+              <TableCell className="font-medium">
+                {buyItem.title || "N/A"}
+              </TableCell>
+              <TableCell>
+                {buyItem.returnPolicy || "No return policy"}
+              </TableCell>
+              <TableCell>{buyItem.brand || "Unknown brand"}</TableCell>
+              <TableCell>
+                {buyItem.price != null ? buyItem.price : "N/A"}
+              </TableCell>
               <TableCell>
                 <Button onClick={() => handleClick(buyItem.id)}>Remove</Button>
               </TableCell>
