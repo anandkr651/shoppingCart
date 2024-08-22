@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { Button } from "../ui/button";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "@/store/slices/card-slice";

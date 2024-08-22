@@ -13,7 +13,7 @@ function ProductCards({ item }) {
         <img src={item.thumbnail} />
         <CardTitle>{item.title}</CardTitle>
         <div className="flex justify-between items-center">
-          <p className="font-medium text-2xl">$ {item.price}</p>
+          <p className="font-medium text-2xl">{item.price}</p>
           <Button onClick={() => router.push(`/${item?.id}`)}>Details</Button>
         </div>
       </CardContent>

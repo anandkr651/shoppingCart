@@ -1,6 +1,6 @@
 import Loading from "@/app/loading";
 import { auth } from "@/auth";
-import ReduxProvider from "@/provider";
+const { default: ReduxProvider } = require("@/provider");
 import { Suspense } from "react";
 
 export async function CommonLayout({ children }) {

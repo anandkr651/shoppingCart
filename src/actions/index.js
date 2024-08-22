@@ -33,10 +33,7 @@ export async function fetchProductDetails(currentId) {
       }
     );
     const data = await apiResponse.json();
-    return {
-      success: true,
-      data: data,
-    };
+   return data;
   } catch (error) {
     return {
       success: false,
@@ -52,5 +49,5 @@ export async function loginAction() {
 
 //signOut
 export async function logoutAction() {
-  await signOut("github");
+  await signOut();
 }

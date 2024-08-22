@@ -1,7 +1,6 @@
 import { auth } from "@/auth";
 import Cart from "@/components/Cart";
 import { redirect } from "next/navigation";
-import React from "react";
 
 async function Cardpage() {
   const getSession = await auth();
