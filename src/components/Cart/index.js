@@ -21,7 +21,7 @@ function Cart() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-      setTotalAmount(cart?.cartItem.reduce((acc, curr) => acc + curr?.price, 0));
+    setTotalAmount(cart?.cartItem.reduce((acc, curr) => acc + curr?.price, 0));
   }, [cart?.cartItem]);
 
   function handleClick(productId) {

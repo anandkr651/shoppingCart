@@ -21,10 +21,10 @@ export default async function Home() {
 
   return (
     <div>
-      <h1 className="text-center text-5xl font-bold text-lime-500">
+      <h1 className="text-center text-5xl font-bold text-lime-500 mb-4">
         Shopping cart
       </h1>
-      <div>
+      <div className="flex flex-wrap justify-around ">
         {getAllproduct && getAllproduct.data && getAllproduct.data.length > 0
           ? getAllproduct.data.map((productItem) => (
               <div key={productItem.id}>

@@ -2,7 +2,7 @@ import React from "react";
 
 function Loading() {
   return (
-    <div className="flex justify-center items-center gap-5 min-h-screen">
+    <div className="flex justify-center items-center gap-5 min-h-screen overflow-hidden px-10">
       <div role="status">
         <svg
           aria-hidden="true"
@@ -79,7 +79,7 @@ function Loading() {
         </svg>
         <span className="sr-only">Loading...</span>
       </div>
-      <span className="text-5xl font-semibold">Processing...</span>
+      <span className="lg:text-5xl text-3xl font-semibold">Processing...</span>
     </div>
   );
 }
