@@ -77,8 +77,7 @@ async function ProductDetailsPage({ params }) {
         />
 
         <hr className="border-slate-500 border my-2" />
-        <div className="flex flex-wrap gap-5 justify-center mx-auto">
-          <div>
+          <div className="flex flex-wrap gap-5 justify-center">
             {getproductDetail &&
             getproductDetail.images &&
             getproductDetail.images.length > 0
@@ -117,7 +116,6 @@ async function ProductDetailsPage({ params }) {
           </h3>
           <AddToCart currentProduct={getproductDetail} />
         </div>
-      </div>
     </div>
   );
 }
