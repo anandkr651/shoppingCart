@@ -3,7 +3,7 @@ import { loginAction, logoutAction } from "@/actions";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-function Header({ getSession }) {
+function Header({ getSession }) { //props comes from provider 
   // console.log(getSession,"getSession in header");
 
   async function handleAuthSignIn() {

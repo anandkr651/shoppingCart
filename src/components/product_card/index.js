@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import React from "react";
 
-function ProductCards({ item }) {
+function ProductCards({ item }) {  // props comes from app/page.js
   const router = useRouter();
   return (
     <Card className="my-2">
@@ -22,7 +22,7 @@ function ProductCards({ item }) {
         <CardTitle className="my-2">{item.title}</CardTitle>
         <div className="flex justify-between items-center">
           <p className="font-medium text-2xl">{item.price}</p>
-          <Button onClick={() => router.push(`/${item?.id}`)}>Details</Button>
+          <Button onClick={() => router.push(`/${item?.id}`)}>Details</Button>  
         </div>
       </CardContent>
     </Card>
